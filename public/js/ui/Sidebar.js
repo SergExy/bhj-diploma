@@ -53,11 +53,7 @@ class Sidebar {
     
     logout.onclick = (e) => {
       e.preventDefault();
-      const callback = () => {
-        localStorage.removeItem('user');
-        App.setState('init');
-      }
-      User.logout(callback);
+      User.logout();
     }
   }
 }

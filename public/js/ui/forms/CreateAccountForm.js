@@ -9,6 +9,9 @@ class CreateAccountForm extends AsyncForm {
    * и сбрасывает форму
    * */
   onSubmit(data) {
-
+    const callback = () => {
+      this.element.reset();
+    }
+    Account.create(data, callback);
   }
 }

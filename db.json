@@ -11,6 +11,18 @@
       "email": "dsfsdf@fsdfsdf",
       "password": "demoe",
       "id": "98sbpj04lm61cub6"
+    },
+    {
+      "name": "work",
+      "email": "fdgagdfsa@serwrw",
+      "password": "dfgdfg",
+      "id": "98sbp36glm62kr11"
+    },
+    {
+      "name": "123 321",
+      "email": "swerwe@qwe",
+      "password": "123",
+      "id": "98sbpq6wlm6ahkru"
     }
   ],
   "accounts": [
@@ -28,6 +40,51 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "sdfsdf",
+      "user_id": "1",
+      "id": "98sbpsvclm6ba9cd"
+    },
+    {
+      "name": "erfs sdf",
+      "user_id": "1",
+      "id": "98sbpx08lm6baz8v"
+    },
+    {
+      "name": "dsfsdf",
+      "user_id": "1",
+      "id": "98sbpjb8lm6bb3ff"
+    },
+    {
+      "name": "1",
+      "user_id": "1",
+      "id": "98sbp5d0lm6bblyf"
+    },
+    {
+      "name": "fghfghfh",
+      "user_id": "1",
+      "id": "98sbpi3slm6bc3cj"
+    },
+    {
+      "name": "fghfghf",
+      "user_id": "1",
+      "id": "98sbprm4lm6bjnnb"
+    },
+    {
+      "name": "as",
+      "user_id": "1",
+      "id": "98sbpu18lm6d7xgl"
+    },
+    {
+      "name": "asa",
+      "user_id": "1",
+      "id": "98sbp7e8lm6dc51j"
+    },
+    {
+      "name": "asas",
+      "user_id": "1",
+      "id": "98sbp754lm6ddwta"
     }
   ],
   "transactions": [

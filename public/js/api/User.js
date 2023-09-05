@@ -10,7 +10,6 @@ class User {
    * */
   static setCurrent(user) {
     localStorage.user = JSON.stringify(user);
-    return true;
   }
 
   /**
@@ -18,7 +17,7 @@ class User {
    * пользователе из локального хранилища.
    * */
   static unsetCurrent() {
-
+    localStorage.removeItem('user');
   }
 
   /**
@@ -93,6 +92,7 @@ class User {
    * выхода необходимо вызвать метод User.unsetCurrent
    * */
   static logout(callback) {
-    callback();
+    this.unsetCurrent()
+    App.setState('init');
   }
 }

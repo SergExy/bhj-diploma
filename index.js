@@ -5,6 +5,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
+const bodyParser = require('body-parser');
 
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync', {
@@ -17,6 +18,9 @@ if(!db.get('users').value())
 
 const app = express();
 app.use(express.static(`${__dirname}/${PUBLIC_PATH}`));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use(cookieParser());
 app.use(cookieSession({

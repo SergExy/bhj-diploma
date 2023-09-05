@@ -9,7 +9,8 @@ class User {
    * локальном хранилище.
    * */
   static setCurrent(user) {
-
+    localStorage.user = JSON.stringify(user);
+    return true;
   }
 
   /**
@@ -25,7 +26,8 @@ class User {
    * из локального хранилища
    * */
   static current() {
-
+    const { user } = localStorage;
+    return JSON.parse(user);
   }
 
   /**
@@ -33,7 +35,7 @@ class User {
    * авторизованном пользователе.
    * */
   static fetch(callback) {
-
+    callback();
   }
 
   /**
@@ -44,15 +46,18 @@ class User {
    * */
   static login(data, callback) {
     createRequest({
-      url: this.URL + '/login',
+      url: `http://localhost:8000/user/login`,
       method: 'POST',
       responseType: 'json',
       data,
-      callback: (err, response) => {
-        if (response && response.user) {
-          this.setCurrent(response.user);
+      callback: (err, res) => {
+        if (res && res.user) {
+          this.setCurrent(res.user);
+          App.setState('user-logged');
+          App.getModal('login').close();
+          return true;
         }
-        callback(err, response);
+        console.log(res.error);
       }
     });
   }
@@ -64,7 +69,23 @@ class User {
    * User.setCurrent.
    * */
   static register(data, callback) {
-
+    // User.setCurrent(data);
+    // callback();
+    createRequest({
+      url: `http://localhost:8000/user/register`,
+      method: 'POST',
+      responseType: 'json',
+      data,
+      callback: (err, res) => {
+        if (res && res.user) {
+          this.setCurrent(res.user);
+          App.setState('user-logged');
+          App.getModal('register').close();
+          return true;
+        }
+        console.log(res.error);
+      }
+    });
   }
 
   /**
@@ -72,6 +93,6 @@ class User {
    * выхода необходимо вызвать метод User.unsetCurrent
    * */
   static logout(callback) {
-
+    callback();
   }
 }

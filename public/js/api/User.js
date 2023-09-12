@@ -26,7 +26,9 @@ class User {
    * */
   static current() {
     const { user } = localStorage;
-    return JSON.parse(user);
+    if (user) {
+      return JSON.parse(user);
+    }
   }
 
   /**
@@ -49,15 +51,7 @@ class User {
       method: 'POST',
       responseType: 'json',
       data,
-      callback: (err, res) => {
-        if (res && res.user) {
-          this.setCurrent(res.user);
-          App.setState('user-logged');
-          App.getModal('login').close();
-          return true;
-        }
-        console.log(res.error);
-      }
+      callback: callback
     });
   }
 
@@ -75,15 +69,7 @@ class User {
       method: 'POST',
       responseType: 'json',
       data,
-      callback: (err, res) => {
-        if (res && res.user) {
-          this.setCurrent(res.user);
-          App.setState('user-logged');
-          App.getModal('register').close();
-          return true;
-        }
-        console.log(res.error);
-      }
+      callback: callback
     });
   }
 
@@ -92,7 +78,7 @@ class User {
    * выхода необходимо вызвать метод User.unsetCurrent
    * */
   static logout(callback) {
-    this.unsetCurrent()
-    App.setState('init');
+    this.unsetCurrent();
+    callback();
   }
 }

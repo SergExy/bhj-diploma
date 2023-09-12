@@ -3,13 +3,18 @@
  * Имеет свойство URL, равно пустой строке.
  * */
 class Entity {
+  static url = '';
   /**
    * Запрашивает с сервера список данных.
    * Это могут быть счета или доходы/расходы
    * (в зависимости от того, что наследуется от Entity)
    * */
   static list(data, callback) {
-
+    createRequest({
+      url: `http://localhost:8000${this.url}${data?.account_id ? '?account_id=' + data.account_id : '/'}`,
+      method: 'GET',
+      callback: callback
+    })
   }
 
   /**
@@ -19,18 +24,11 @@ class Entity {
    * */
   static create(data, callback) {
     createRequest({
-      url: `http://localhost:8000/account`,
+      url: `http://localhost:8000${this.url}`,
       method: 'PUT',
       responseType: 'json',
       data,
-      callback: (err, res) => {
-        if (res && res.account) {
-          callback();
-          App.getModal('createAccount').close();
-          return console.log(res);
-        }
-        console.log(res.error);
-      }
+      callback: callback
     })
   }
 
@@ -39,6 +37,12 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static remove(data, callback) {
-
+    createRequest({
+      url: `http://localhost:8000${this.url}`,
+      method: 'DELETE',
+      responseType: 'json',
+      data,
+      callback: callback
+    })
   }
 }

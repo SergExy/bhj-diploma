@@ -15,7 +15,7 @@ const createRequest = (options = {}) => {
     try {
         xhr.open(method, url);
 
-        xhr.responseType = responseType;
+        if (responseType) xhr.responseType = responseType;
         if (responseType === 'json') {
             xhr.setRequestHeader('Content-Type', 'application/json');
         }

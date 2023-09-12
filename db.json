@@ -7,22 +7,16 @@
       "id": "1"
     },
     {
-      "name": "work",
-      "email": "dsfsdf@fsdfsdf",
-      "password": "demoe",
-      "id": "98sbpj04lm61cub6"
-    },
-    {
-      "name": "work",
-      "email": "fdgagdfsa@serwrw",
-      "password": "dfgdfg",
-      "id": "98sbp36glm62kr11"
-    },
-    {
-      "name": "123 321",
-      "email": "swerwe@qwe",
+      "name": "User",
+      "email": "user2@user",
       "password": "123",
-      "id": "98sbpq6wlm6ahkru"
+      "id": "98sbpa2slmfwrcfx"
+    },
+    {
+      "name": "User",
+      "email": "user@user",
+      "password": "123",
+      "id": "98sbpco8lmfy4299"
     }
   ],
   "accounts": [
@@ -42,49 +36,14 @@
       "id": "3"
     },
     {
-      "name": "sdfsdf",
-      "user_id": "1",
-      "id": "98sbpsvclm6ba9cd"
+      "name": "Наличные",
+      "user_id": "98sbp8mclmexot8t",
+      "id": "98sbpbtolmexuw6j"
     },
     {
-      "name": "erfs sdf",
-      "user_id": "1",
-      "id": "98sbpx08lm6baz8v"
-    },
-    {
-      "name": "dsfsdf",
-      "user_id": "1",
-      "id": "98sbpjb8lm6bb3ff"
-    },
-    {
-      "name": "1",
-      "user_id": "1",
-      "id": "98sbp5d0lm6bblyf"
-    },
-    {
-      "name": "fghfghfh",
-      "user_id": "1",
-      "id": "98sbpi3slm6bc3cj"
-    },
-    {
-      "name": "fghfghf",
-      "user_id": "1",
-      "id": "98sbprm4lm6bjnnb"
-    },
-    {
-      "name": "as",
-      "user_id": "1",
-      "id": "98sbpu18lm6d7xgl"
-    },
-    {
-      "name": "asa",
-      "user_id": "1",
-      "id": "98sbp7e8lm6dc51j"
-    },
-    {
-      "name": "asas",
-      "user_id": "1",
-      "id": "98sbp754lm6ddwta"
+      "name": "Сбербанк",
+      "user_id": "98sbp8mclmexot8t",
+      "id": "98sbp1sslmexv7vg"
     }
   ],
   "transactions": [
@@ -222,6 +181,24 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "98sbp56klmexvur4",
+      "type": "income",
+      "name": "Зарплата",
+      "sum": 5000,
+      "account_id": "98sbpbtolmexuw6j",
+      "user_id": "98sbp8mclmexot8t",
+      "created_at": "2023-09-11T13:48:17.391Z"
+    },
+    {
+      "id": "98sbpdo4lmexwr2x",
+      "type": "income",
+      "name": "Заначка",
+      "sum": 10000,
+      "account_id": "98sbp1sslmexv7vg",
+      "user_id": "98sbp8mclmexot8t",
+      "created_at": "2023-09-11T13:48:59.288Z"
     }
   ]
 }

@@ -13,7 +13,7 @@ class AsyncForm {
    * через registerEvents()
    * */
   constructor(element) {
-    if (!element) return console.log('Пустой объект');
+    if (!element) throw new Error('Пустой объект');
     this.element = element;
     this.registerEvents();
   }

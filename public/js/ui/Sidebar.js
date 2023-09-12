@@ -53,7 +53,11 @@ class Sidebar {
     
     logout.onclick = (e) => {
       e.preventDefault();
-      User.logout();
+      const callback = () => {
+        App.getPage("transactions").clear();
+        App.setState('init');
+      }
+      User.logout(callback);
     }
   }
 }

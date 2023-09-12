@@ -12,7 +12,7 @@ class Modal {
    * необходимо выкинуть ошибку.
    * */
   constructor(element){
-    if (!element) return console.log('Пустой объект');
+    if (!element) throw new Error('Пустой объект');
     this.element = element;
   }
 
@@ -53,5 +53,6 @@ class Modal {
    * */
   close(){
     this.element.style.removeProperty('display');
+    document.querySelector(`#${this.element.id} form`).reset();
   }
 }
